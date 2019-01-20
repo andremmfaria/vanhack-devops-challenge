@@ -1,0 +1,6 @@
+project_name: "wordpress"
+host_name: "wordpress.aws"
+remote_user: ubuntu
+wordpress_path: /var/www/wordpress
+group_id : "sg-0f66ecd3901bfc2e6"
+aws_region : "eu-east-1"

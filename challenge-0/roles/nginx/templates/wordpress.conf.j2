@@ -1,0 +1,28 @@
+server {
+        listen       80 default_server;
+        server_name  {{ server_hostname }};
+        root {{ wordpress_path }} ;
+	client_max_body_size 64M;
+        ssl_certificate     /etc/nginx/ssl/nginx.crt;
+        ssl_certificate_key /etc/nginx/ssl/nginx.key;
+ 
+	# Deny access to any files with a .php extension in the uploads directory
+        location ~* /(?:uploads|files)/.*\.php$ {
+                deny all;
+        }
+ 
+        location / {
+                index index.php index.html index.htm;
+                try_files $uri $uri/ /index.php?$args;
+        }
+ 
+        location ~* \.(gif|jpg|jpeg|png|css|js)$ {
+                expires max;
+        }
+ 
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        }
+}

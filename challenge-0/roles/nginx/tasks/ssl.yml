@@ -1,0 +1,17 @@
+- name: Creates ssl directory
+  file: 
+    path: /etc/nginx/ssl 
+    state: directory
+
+- name: Create self signed Cert
+  shell: |
+    openssl req \
+    -new \
+    -newkey rsa:4096 \
+    -days 365 \ 
+    -nodes \
+    -x509 \
+    -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" \
+    -keyout /etc/nginx/ssl/nginx.key \
+    -out /etc/nginx/ssl/nginx.crt
+  notify: restart nginx

@@ -1,0 +1,16 @@
+- name: Install PHP
+  apt: 
+    package: "{{ item }}"
+    state: present
+    force: yes
+  with_items:
+    - php7.2
+    - php7.2-fpm
+    - php7.2-enchant
+    - php7.2-IDNA_Convert
+    - php7.2-mbstring
+    - php7.2-mysql
+    - php7.2-PHPMailer
+    - php7.2-process
+    - php7.2-simplepie
+    - php7.2-xml
