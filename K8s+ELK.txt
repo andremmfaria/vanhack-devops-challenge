@@ -1,0 +1,12 @@
+Task:
+Write k8s manifest for ELK.
+
+Environment:
+Kubernetes => 1.10
+
+Description:
+Write manifest which will deploy ELK on k8s. Elasticstach in three replicas, Logstash in one and Kibana in one.
+
+Acceptance criteria:
+After executing manifest ELK running on Kubernetes cluster.
+Elasticstash, Logstash and Kibana don't lose data after killing their pods.

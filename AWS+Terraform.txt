@@ -1,0 +1,19 @@
+Task:
+Define Terraform provisioner to create infrastructure and deploy simple service (using remote exec) on AWS or Azure.
+
+Service can be any application with database - Redmine, Mediawiki, etc.
+Infrastructure on AWS - EC2, RDS, ClouFront
+Infrastructure on Azure - Azure VM, SQL Database, Azure CDN
+
+Environment:
+Terraform, AWS/Azure
+
+Description:
+Write Terraform provisioner which will:
+1. create and configure database
+2. create instance and deploy service on it using remote exec
+3. configure CDN with instance
+
+Acceptance criteria:
+Service running after executing Terraform provisioner
+It available to open service in browser, sign in, etc.

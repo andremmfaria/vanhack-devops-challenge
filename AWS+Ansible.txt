@@ -1,0 +1,18 @@
+Task:
+Create Ansible playbook to deploy simple service on Public Cloud
+
+Service can be any application with database - Redmine, Mediawiki, etc.
+Public Cloud Infrastructure is AWS (EC2, RDS, ClouFront) or Azure (Azure VM, SQL Database, Azure CDN)
+
+Environment:
+Ansible, AWS/Azure
+
+Description:
+Write Ansible playbook which will:
+1. create database
+2. create VM instance and deploy service on it
+3. configure CDN with VM instance
+
+Acceptance criteria:
+Service running after executing Ansible playbook
+It available to open service in browser, sign in, etc.
